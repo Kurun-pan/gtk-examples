@@ -1,6 +1,6 @@
 #include <gtk/gtk.h>
 
-static void activate (GtkApplication* app, gpointer user_data)
+static void cb_application_activate (GtkApplication* app, gpointer user_data)
 {
     GtkWidget *window;
     GtkWidget *label;
@@ -33,8 +33,8 @@ int main (int argc, char **argv)
     /* アプリケーション作成. gtk_initはこの内部で呼ばれるため、不要 */
     app = gtk_application_new ("org.gtk3.helloworld", G_APPLICATION_FLAGS_NONE);
 
-    /* GtkApplicationインスタンス生成後最初のシグナルの設定 */
-    g_signal_connect (app, "activate", G_CALLBACK (activate), NULL);
+    /* アプリケーションのコールバック設定 */
+    g_signal_connect (app, "activate", G_CALLBACK (cb_application_activate), NULL);
 
     /* アプリケーション起動&メインループ */
     status = g_application_run (G_APPLICATION (app), argc, argv);
