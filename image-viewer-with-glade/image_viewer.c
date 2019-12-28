@@ -13,21 +13,21 @@ static void cb_button_chooser_clicked (GtkWidget *button, gpointer user_data)
     GtkWindow *window = gtk_application_get_active_window (app);
 
     /* ファイル選択ダイアログ生成 */
-    GtkWidget *dialog = gtk_file_chooser_dialog_new ("画像ファイルを選択",
-                                          GTK_WINDOW (window),
-                                          GTK_FILE_CHOOSER_ACTION_OPEN,
-                                          "_Cancel",
-                                          GTK_RESPONSE_CANCEL,
-                                          "_Open",
-                                          GTK_RESPONSE_ACCEPT,
-                                          NULL);
+    GtkWidget *dialog = gtk_file_chooser_dialog_new (
+                                        "画像ファイルを選択",
+                                        GTK_WINDOW (window),
+                                        GTK_FILE_CHOOSER_ACTION_OPEN,
+                                        "キャンセル",
+                                        GTK_RESPONSE_CANCEL,
+                                        "選択",
+                                        GTK_RESPONSE_ACCEPT,
+                                        NULL);
 
     /* ダイアログ表示 */
     gtk_widget_show_all (dialog);
 
     /* ダイアログによるファイル選択処理 */
-    gint response = gtk_dialog_run (GTK_DIALOG (dialog));
-    if (response == GTK_RESPONSE_ACCEPT) {
+    if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT) {
         /* 選択したファイル名の取得 */
         gchar *filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (dialog));
 
@@ -44,7 +44,7 @@ static void cb_button_chooser_clicked (GtkWidget *button, gpointer user_data)
     gtk_widget_destroy (dialog);
 }
 
-static void cb_application_activate (GtkApplication* app, gpointer user_data)
+static void cb_app_activate (GtkApplication* app, gpointer user_data)
 {
     GtkBuilder* builder = gtk_builder_new ();
     g_return_if_fail (builder != NULL);
@@ -72,7 +72,7 @@ static void cb_application_activate (GtkApplication* app, gpointer user_data)
     g_signal_connect (button_quit, "clicked", G_CALLBACK (cb_button_quit_clicked), app);
     
     /* 画像ファイル選択ボタンの設定 */
-    GtkWidget *button_chooser = GTK_WIDGET (gtk_builder_get_object (builder, "button_choose_file"));
+    GtkWidget *button_chooser = GTK_WIDGET (gtk_builder_get_object (builder, "button_chooser"));
     g_signal_connect (button_chooser, "clicked", G_CALLBACK (cb_button_chooser_clicked), app);
 
     /* 画像表示エリアの設定 */
@@ -88,8 +88,8 @@ int main (int argc, char **argv)
     GtkApplication *app;
     int status;
 
-    app = gtk_application_new ("org.gtk3.helloworld", G_APPLICATION_FLAGS_NONE);
-    g_signal_connect (app, "activate", G_CALLBACK (cb_application_activate), NULL);
+    app = gtk_application_new ("org.gtk3.image-viewer", G_APPLICATION_FLAGS_NONE);
+    g_signal_connect (app, "activate", G_CALLBACK (cb_app_activate), NULL);
     status = g_application_run (G_APPLICATION (app), argc, argv);
     g_object_unref (app);
 

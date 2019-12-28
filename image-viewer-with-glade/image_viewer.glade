@@ -30,7 +30,7 @@
             <property name="can_focus">False</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkButton" id="button_choose_file">
+              <object class="GtkButton" id="button_chooser">
                 <property name="label" translatable="yes">画像ファイル選択</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>

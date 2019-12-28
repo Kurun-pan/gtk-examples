@@ -13,4 +13,4 @@ image_viewer: $(src)
 	$(CC) -o $(obj) $(src) $(CFLAGS) $(LIBS)
 
 clean:
-	rm -f $(targets) *.o
+	rm -f $(targets) *.o *.*~
