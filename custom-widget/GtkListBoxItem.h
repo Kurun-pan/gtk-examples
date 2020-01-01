@@ -3,9 +3,9 @@
 
 #include <gtk/gtk.h>
 
-#define GTK_LISTBOX_ITEM_CLASS_DEFINITION_FILE "/gtk/exsamples/custom-widget/GtkListBoxItem.glade"
+#define GTK_LISTBOX_ITEM_CLASS_DEFINITION_FILE "/gtk/examples/custom-widget/GtkListBoxItem.glade"
 
-#define GTK_TYPE_LISTBOX_ITEM		 \
+#define GTK_TYPE_LISTBOX_ITEM\
     (gtk_listbox_row_get_type())
 #define GTK_LISTBOX_ITEM(listbox_row)\
     (G_TYPE_CHECK_INSTANCE_CAST((listbox_row), GTK_TYPE_LISTBOX_ITEM, GtkListBoxItem))

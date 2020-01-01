@@ -16,8 +16,6 @@ static void gtk_listbox_row_class_init (GtkListBoxItemClass *klass)
                                                   GtkListBoxItem, label_no);
     gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS(klass),
                                                   GtkListBoxItem, label_body);
-
-    //gtk_widget_class_bind_template_callback(GTK_WIDGET_CLASS(klass), xxx);
 }
 
 static void gtk_listbox_row_init (GtkListBoxItem *self)
@@ -44,7 +42,7 @@ GtkListBoxItem *gtk_listbox_item_new (gint index, const gchar *str)
     }
 
     /* リストビューの文字を設定 */
-        gtk_label_set_text (row->priv->label_body, str);
+    gtk_label_set_text (row->priv->label_body, str);
 
     return row;
 }
