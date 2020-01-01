@@ -3,16 +3,14 @@
 
 #include <gtk/gtk.h>
 
-#define GTK_LISTBOX_ITEM_CLASS_DEFINITION_FILE "/gtk/examples/custom-widget/GtkListBoxItem.glade"
-
 #define GTK_TYPE_LISTBOX_ITEM\
-    (gtk_listbox_row_get_type())
+    (gtk_listbox_item_get_type())
 #define GTK_LISTBOX_ITEM(listbox_row)\
     (G_TYPE_CHECK_INSTANCE_CAST((listbox_row), GTK_TYPE_LISTBOX_ITEM, GtkListBoxItem))
 #define GTK_LISTBOX_ITEM_CLASS(klass)\
     (G_TYPE_CHECK_CLASS_CAST((klass), GTK_TYPE_LISTBOX_ITEM, GtkListBoxItemClass))
 
-GType gtk_listbox_row_get_type (void) G_GNUC_CONST;
+GType gtk_listbox_item_get_type (void) G_GNUC_CONST;
 
 typedef struct {
     GtkListBoxRowClass parent_class;

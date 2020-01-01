@@ -5,12 +5,12 @@
  *[refs]: https://developer.gnome.org/gtk3/stable/GtkWidget.html
  *        Building composite widgets from template XML
  */
-G_DEFINE_TYPE_WITH_PRIVATE (GtkListBoxItem, gtk_listbox_row, GTK_TYPE_LIST_BOX_ROW);
+G_DEFINE_TYPE_WITH_PRIVATE (GtkListBoxItem, gtk_listbox_item, GTK_TYPE_LIST_BOX_ROW);
 
-static void gtk_listbox_row_class_init (GtkListBoxItemClass *klass)
+static void gtk_listbox_item_class_init (GtkListBoxItemClass *klass)
 {
     gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS(klass),
-                                                 GTK_LISTBOX_ITEM_CLASS_DEFINITION_FILE);
+                                                 "/gtk/examples/custom-widget/GtkListBoxItem.glade");
 
     gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS(klass),
                                                   GtkListBoxItem, label_no);
@@ -18,16 +18,16 @@ static void gtk_listbox_row_class_init (GtkListBoxItemClass *klass)
                                                   GtkListBoxItem, label_body);
 }
 
-static void gtk_listbox_row_init (GtkListBoxItem *self)
+static void gtk_listbox_item_init (GtkListBoxItem *self)
 {
-    self->priv = (GtkListBoxItemPrivate *) gtk_listbox_row_get_instance_private (GTK_LISTBOX_ITEM (self));
+    self->priv = (GtkListBoxItemPrivate *) gtk_listbox_item_get_instance_private (GTK_LISTBOX_ITEM (self));
     gtk_widget_init_template (GTK_WIDGET (self));
 }
 
 GtkListBoxItem *gtk_listbox_item_new (gint index, const gchar *str)
 {
     GtkListBoxItem *row = 
-        GTK_LISTBOX_ITEM (g_object_new (gtk_listbox_row_get_type (), NULL));
+        GTK_LISTBOX_ITEM (g_object_new (gtk_listbox_item_get_type (), NULL));
 
     g_warn_if_fail (row != NULL);
     g_warn_if_fail (row->priv != NULL);
