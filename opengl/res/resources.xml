@@ -1,0 +1,8 @@
+<gresources>
+  <gresource prefix="/gtk/examples/opengl/">
+    <file compressed="true">glarea-gl.fs.glsl</file>
+    <file compressed="true">glarea-gl.vs.glsl</file>
+    <file compressed="true">glarea-gles.fs.glsl</file>
+    <file compressed="true">glarea-gles.vs.glsl</file>
+  </gresource>
+</gresources>
