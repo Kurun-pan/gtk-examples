@@ -42,8 +42,8 @@ static void cb_activate (GtkApplication* app, gpointer user_data)
      **/
     // WebKit
     // API refs: https://webkitgtk.org/reference/webkit2gtk/2.26.2/WebKitWebView.html
-#if 0
     WebKitWebContext *context = webkit_web_context_new ();
+#if 0
     WebKitNetworkProxySettings *proxy_settings = webkit_network_proxy_settings_new ("http://proxy-host-name:12345/", NULL);
     webkit_web_context_set_network_proxy_settings (context, WEBKIT_NETWORK_PROXY_MODE_CUSTOM, proxy_settings);
     webkit_web_context_set_tls_errors_policy (context, WEBKIT_TLS_ERRORS_POLICY_IGNORE);
