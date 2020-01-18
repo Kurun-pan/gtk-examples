@@ -12,7 +12,7 @@ spinner {
 }
 
 /* GtkButtonの設定 */
-.text-button {
+button.text-button {
     border-image: none;
     border-style: solid;
     border-width: 1px;
@@ -23,12 +23,12 @@ spinner {
 }
 
 /* GtkButton内のGtkLabelに対して設定 */
-.text-button label {
+button.text-button label {
     color: green;
 }
 
 /* 独自定義のスタイルクラス for GtkButton */
-.button-ligt-gray {
+button.button-ligt-gray {
     border-image: none;
     border-style: solid;
     border-width: 4px;
@@ -51,7 +51,7 @@ button:hover:active {
 }
 
 /* GtkToggleButtonのチェックON時 */
-.toggle:checked {
+button.toggle:checked {
     background-color:red;
 }
 
