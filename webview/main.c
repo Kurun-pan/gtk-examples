@@ -22,17 +22,16 @@ static gint cb_command_line (GtkApplication* app, GApplicationCommandLine *comma
         /* グローバル変数に保存 */
         sprintf (s_url, "%s", argv[1]);
 
-        /* 取得したコマンドライン引数の開放処理が必須です */
-        g_strfreev (argv);
-
         /* GtkApplicationをアクティベート */
         g_application_activate (G_APPLICATION (app));
-        return 0;
     }
     else
       g_print ("Usage: webkit_sample URL\n");
 
-    return argc;
+    /* 取得したコマンドライン引数の開放処理が必須です */
+    g_strfreev (argv);
+
+    return 0;
 }
 
 static void cb_activate (GtkApplication* app, gpointer user_data)
