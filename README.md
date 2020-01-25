@@ -6,13 +6,13 @@ GTKを利用したGUI開発で必要になりそうな内容を大まかに網�
 ## hello-world
 
 Hello Worldのサンプルコードです。ウインドウの生成やラベル追加など最も基本的な内容です。
-![hello-world](./assets/hello-world.png "hello-world")
+<img src="./assets/hello-world.png" width="320">
 
 ## image-viewer-with-glade
 
 簡易画像ビューアアプリケーションのサンプルコードです。
 こちらは、Gladeデザインツールを利用して作成した画面のxmlファイルを読み込んでいます。
-![image-viewer-with-glade](./assets/hello-world.png "image-viewer-with-glade")
+<img src="./assets/sample-image-viewer.png" width="320">
 
 ## cairo
 
@@ -34,7 +34,7 @@ GLibのg_threadを利用した、画面のカウンタ値を1秒間隔でカウ�
 ## webview
 
 WebKitGtkを利用したWebview (HTML5コンテンツの表示) アプリケーションのサンプルです。
-![webview](webview-app.png "webview")
+<img src="./assets/webview-app.png" width="320">
 
 ## style
 
@@ -43,7 +43,9 @@ WebKitGtkを利用したWebview (HTML5コンテンツの表示) アプリケー�
 ## localize
 
 GTKの多言語対応サンプルコードです。
+<img src="./assets/demo-localize.png" width="320">
 
 ## custom-widget
 
 独自定義のウィジェットを作成し、リストボックスで表示するサンプルコードです。
+![custom-widget](./assets/hello-world.png "custom-widget")
