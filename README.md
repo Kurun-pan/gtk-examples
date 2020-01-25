@@ -20,10 +20,14 @@ Hello Worldのサンプルコードです。ウインドウの生成やラベル
 
 2Dグラフィックスライブラリのcairoを利用した簡易ペイントのサンプルです。
 
+<img src="./assets/cairo-app.png" width="320">
+
 ## opengl
 
 3DグラフィックスライブラリのOpenGLを利用したシェーダプログラムのサンプルです。
 シェーダ部分はGTK3デモアプリケーションのソースコードをそのまま利用しています。
+
+<img src="./assets/opengl-app.png" width="320">
 
 ## thread
 
