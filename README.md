@@ -29,9 +29,13 @@ Hello Worldのサンプルコードです。ウインドウの生成やラベル
 
 GLibのg_threadを利用した、画面のカウンタ値を1秒間隔でカウントアップするだけのサンプルです。
 
+<img src="./assets/counter-app.png" width="320">
+
 ## timer
 
 上記threadサンプルプログラムの内容をスレッドの代わりにタイマーを利用したサンプルです。
+
+<img src="./assets/counter-app.png" width="320">
 
 ## webview
 
@@ -43,6 +47,8 @@ WebKitGtkを利用したWebview (HTML5コンテンツの表示) アプリケー�
 
 スタイルシート (CSS) を用いたウィジェットのデザイン設定のサンプルです。
 
+<img src="./assets/style-app.png" width="320">
+
 ## localize
 
 GTKの多言語対応サンプルコードです。
@@ -53,4 +59,4 @@ GTKの多言語対応サンプルコードです。
 
 独自定義のウィジェットを作成し、リストボックスで表示するサンプルコードです。
 
-![custom-widget](./assets/hello-world.png "custom-widget")
+<img src="./assets/custom-widget-app.png" width="320">
